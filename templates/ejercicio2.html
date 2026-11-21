@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Programación Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 80px;
+        }
+
+        .formulario {
+            background-color: white;
+            padding: 30px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #008cff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .resultado {
+            margin-top: 25px
+        }
+    </style>
+</head>
+<body>
+    <div class="formulario">
+        <h2> Inicio de sesión</h2>
+
+        <form action="/ejercicio2" method="post">
+            <p>Ingresa tu nombre</p>
+            <input type="text" name="usuario" required>
+            <p>Ingresa tu contraseña</p>
+            <input type="password" name="contrasena" required>
+
+            <p>
+                <button type="submit">Verificar</button>
+            </p>
+        </form>
+
+        {% if mensaje is defined %}
+        <div class="resultado">
+            <p>{{ mensaje }}</p>
+        </div>
+        {% endif %}
+    
+        <p><a href="/">Volver al menu</a></p>
+    </div>
+</body>
+</html>
+            

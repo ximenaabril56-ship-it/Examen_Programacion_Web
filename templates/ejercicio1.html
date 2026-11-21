@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Pinturas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 80px;
+           
+        }
+
+        .formulario´{
+            background-color: white;
+            padding: 30px;
+            width: 320px;
+            margin: auto;
+            border-radius: 10px;
+            
+        }
+        
+        input{
+            padding: 10px;
+            margin: 10px 0;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #b000b8;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="formulario">
+        <h2>Ejercicio 1 - Pinturas</h2>
+
+        <form action="/ejercicio1" method="post">
+            <input type="text" name="nombre"
+                    placeholder="Ingrese su nombre" required>
+            <input type="number" name="edad" 
+                    placeholder="Ingrese su edad" min="0" required>
+            <input type="number" name="cantidad" 
+                    placeholder="Cantidad de tarros" min="1" required>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        {% if total_pagar is defined %}
+
+        <div class="resultado">
+            <h3>Resultado de compra:</h3>
+
+            <p>Cliente: {{ nombre }}</p>
+
+            <p>Edad: {{ edad }}</p>
+
+            <p>Total sin descuento: ${{ total }}</p>
+
+            <p>Descuento: ${{ descuento }}</p>
+
+            <h33>Total a pagar: ${{ total_pagar }}</h3>
+            
+        </div>
+
+        {% endif %}
+        
+
+        <p><a href="/">Volver al menú</a></p>
+    </div>
+</body>
+</html>
